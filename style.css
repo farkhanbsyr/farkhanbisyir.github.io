@@ -661,6 +661,7 @@ ul {
   position: absolute;
   inset: 0;
   background: rgba(15, 20, 40, 0.75);
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
