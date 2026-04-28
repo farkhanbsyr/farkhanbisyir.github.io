@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nama Anda — Portfolio</title>
+
+  <!-- Google Fonts: DM Serif Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet utama -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo / nama singkat -->
+      <a href="#home" class="nav-logo">NA<span class="dot">.</span></a>
+
+      <!-- Hamburger untuk mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home"         class="nav-link">Home</a></li>
+        <li><a href="#about"        class="nav-link">About</a></li>
+        <li><a href="#skills"       class="nav-link">Skills</a></li>
+        <li><a href="#portfolio"    class="nav-link">Portfolio</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#contact"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Dark mode toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">PORTFOLIO</div>
+
+    <div class="container hero-container">
+      <!-- Foto profil -->
+      <div class="hero-image fade-in">
+        <div class="image-frame">
+          <img
+            src="https://placehold.co/400x500/1a1a2e/ffffff?text=Foto+Profil"
+            alt="Foto Profil"
+            class="profile-img"
+          />
+          <div class="image-accent"></div>
+        </div>
+      </div>
+
+      <!-- Teks hero -->
+      <div class="hero-content fade-in">
+        <p class="hero-greeting">Halo, saya</p>
+        <h1 class="hero-name">Nama <em>Anda</em></h1>
+        <p class="hero-tagline">Web Developer &nbsp;|&nbsp; Programmer &nbsp;|&nbsp; Student</p>
+        <p class="hero-desc">
+          Saya seorang pengembang web yang bersemangat dalam membangun
+          pengalaman digital yang indah dan fungsional. Selalu belajar,
+          selalu bertumbuh.
+        </p>
+
+        <!-- Tombol CTA -->
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">Lihat Portfolio</a>
+          <a href="assets/cv-placeholder.pdf" download class="btn btn-outline">Download CV</a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+          <span class="scroll-line"></span>
+          <span class="scroll-text">Scroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section class="section about" id="about">
+    <div class="container">
+
+      <!-- Section label -->
+      <div class="section-label fade-in">01 — About Me</div>
+
+      <div class="about-grid">
+        <!-- Kolom kiri: teks -->
+        <div class="about-text fade-in">
+          <h2 class="section-title">Tentang <em>Saya</em></h2>
+
+            <p>
+            Saya adalah siswa jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki passion
+            besar di bidang pengembangan web dan teknologi. Saya menikmati proses
+            membangun sebuah website dari nol — mulai dari merancang tampilan hingga
+            menjadi aplikasi yang dapat digunakan oleh banyak orang.
+            </p>
+
+            <p>
+            Minat saya mencakup <strong>web development</strong>, desain
+            <strong>UI/UX</strong> sederhana, serta pemrograman backend menggunakan
+            teknologi seperti <strong>HTML</strong>, <strong>CSS</strong>,
+            <strong>JavaScript</strong>, dan <strong>PHP</strong>. Saya juga terus belajar
+            dan mengembangkan kemampuan melalui berbagai proyek website yang saya buat.
+            </p>
+
+            <p>
+            Salah satu pencapaian yang saya banggakan adalah meraih
+            <strong>Juara 1 Olimpiade Web Design tingkat Kota Tegal (BSI FLASH 2026)
+                dan Juara 1 Lomba LKS Web Technology tingkat Kota Tegal (LKS KOTA TEGAL 2026)
+            </strong>.
+            Pengalaman tersebut memotivasi saya untuk terus meningkatkan skill dan
+            berinovasi dalam dunia pengembangan web.
+            </p>
+
+            <p>
+            Tujuan saya adalah menjadi seorang <strong>Full-Stack Web Developer</strong>
+            profesional yang mampu menciptakan solusi digital yang inovatif dan
+            bermanfaat, serta terus berkembang mengikuti kemajuan teknologi di era
+            digital.
+            </p>
+        </div>
+
+        <!-- Kolom kanan: info cards -->
+        <div class="about-cards fade-in">
+          <div class="info-card">
+            <span class="info-icon">📍</span>
+            <div>
+              <p class="info-label">Lokasi</p>
+              <p class="info-value">Bandung, Indonesia</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🎓</span>
+            <div>
+              <p class="info-label">Pendidikan</p>
+              <p class="info-value">S1 Informatika</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💼</span>
+            <div>
+              <p class="info-label">Status</p>
+              <p class="info-value">Open to Work</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🌐</span>
+            <div>
+              <p class="info-label">Bahasa</p>
+              <p class="info-value">Indonesia, English</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SKILLS SECTION
+  ============================================================ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label fade-in">02 — Skills</div>
+      <h2 class="section-title fade-in">Kemampuan <em>Teknis</em></h2>
+
+      <!-- Progress bars -->
+      <div class="skills-grid fade-in">
+
+        <!-- Skill item: HTML -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">HTML5</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90"></div>
+          </div>
+        </div>
+
+        <!-- Skill item: CSS -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">CSS3</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+        </div>
+
+        <!-- Skill item: JavaScript -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75"></div>
+          </div>
+        </div>
+
+        <!-- Skill item: PHP -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">PHP</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70"></div>
+          </div>
+        </div>
+
+        <!-- Skill item: MySQL -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">MySQL</span>
+            <span class="skill-percent">65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="65"></div>
+          </div>
+        </div>
+
+        <!-- Skill item: GitHub -->
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">GitHub</span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Skill badges tambahan -->
+      <div class="skill-badges fade-in">
+        <span class="badge">Git</span>
+        <span class="badge">VS Code</span>
+        <span class="badge">Figma</span>
+        <span class="badge">Bootstrap</span>
+        <span class="badge">Linux</span>
+        <span class="badge">REST API</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PORTFOLIO / PROJECTS SECTION
+  ============================================================ -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-label fade-in">03 — Portfolio</div>
+      <h2 class="section-title fade-in">Project <em>Saya</em></h2>
+
+      <!-- Grid portfolio -->
+      <div class="portfolio-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://placehold.co/600x360/0f3460/ffffff?text=Project+1" alt="Project 1" />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-small">View Website</a>
+              <a href="#" class="btn btn-small btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-tag">Web App</p>
+            <h3 class="project-title">Sistem Manajemen Perpustakaan</h3>
+            <p class="project-desc">Aplikasi web untuk mengelola data buku, anggota, dan transaksi peminjaman perpustakaan sekolah.</p>
+            <div class="project-tech">
+              <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://placehold.co/600x360/16213e/ffffff?text=Project+2" alt="Project 2" />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-small">View Website</a>
+              <a href="#" class="btn btn-small btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-tag">Landing Page</p>
+            <h3 class="project-title">Portfolio Website Personal</h3>
+            <p class="project-desc">Website portfolio modern dan responsif yang dibangun menggunakan HTML, CSS, dan JavaScript murni.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://placehold.co/600x360/1a472a/ffffff?text=Project+3" alt="Project 3" />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-small">View Website</a>
+              <a href="#" class="btn btn-small btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-tag">E-Commerce</p>
+            <h3 class="project-title">Toko Online Produk Lokal</h3>
+            <p class="project-desc">Platform e-commerce sederhana untuk UMKM lokal dengan fitur keranjang belanja dan checkout.</p>
+            <div class="project-tech">
+              <span>PHP</span><span>MySQL</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://placehold.co/600x360/4a1942/ffffff?text=Project+4" alt="Project 4" />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-small">View Website</a>
+              <a href="#" class="btn btn-small btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-tag">Dashboard</p>
+            <h3 class="project-title">Dashboard Monitoring Nilai</h3>
+            <p class="project-desc">Aplikasi dashboard untuk memantau nilai akademik mahasiswa dengan visualisasi data grafik interaktif.</p>
+            <div class="project-tech">
+              <span>JavaScript</span><span>Chart.js</span><span>CSS</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end portfolio-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CERTIFICATES SECTION
+  ============================================================ -->
+  <section class="section certificates" id="certificates">
+    <div class="container">
+      <div class="section-label fade-in">04 — Certificates</div>
+      <h2 class="section-title fade-in">Sertifikat <em>Saya</em></h2>
+
+      <div class="cert-grid">
+
+        <!-- Sertifikat 1 -->
+        <div class="cert-card fade-in">
+          <div class="cert-image">
+            <img src="assets/sertif1.JPG" alt="Sertifikat 1" />
+            <div class="cert-badge">2026</div>
+          </div>
+          <div class="cert-info">
+            <p class="cert-issuer">Dicoding Indonesia</p>
+            <h3 class="cert-name">Belajar Dasar Pemrograman Web</h3>
+            <p class="cert-year">📅 Januari 2024</p>
+          </div>
+        </div>
+
+        <!-- Sertifikat 2 -->
+        <div class="cert-card fade-in">
+          <div class="cert-image">
+            <img src="assets/sertif2.JPG" alt="Sertifikat 2" />
+            <div class="cert-badge">2026</div>
+          </div>
+          <div class="cert-info">
+            <p class="cert-issuer">Coursera — Google</p>
+            <h3 class="cert-name">Google IT Support Professional</h3>
+            <p class="cert-year">📅 April 2024</p>
+          </div>
+        </div>
+
+        <!-- Sertifikat 3 -->
+        <div class="cert-card fade-in">
+          <div class="cert-image">
+            <img src="assets/sertif3.JPG" alt="Sertifikat 3" />
+            <div class="cert-badge">2025</div>
+          </div>
+          <div class="cert-info">
+            <p class="cert-issuer">Udemy</p>
+            <h3 class="cert-name">The Complete JavaScript Course 2025</h3>
+            <p class="cert-year">📅 Februari 2025</p>
+          </div>
+        </div>
+
+        <!-- Sertifikat 4 -->
+        <div class="cert-card fade-in">
+          <div class="cert-image">
+            <img src="assets/sertif4.JPG" alt="Sertifikat 4" />
+            <div class="cert-badge">2025</div>
+          </div>
+          <div class="cert-info">
+            <p class="cert-issuer">Udemy</p>
+            <h3 class="cert-name">The Complete JavaScript Course 2025</h3>
+            <p class="cert-year">📅 Februari 2025</p>
+          </div>
+        </div>
+
+        <!-- Sertifikat 5 -->
+        <div class="cert-card fade-in">
+          <div class="cert-image">
+            <img src="assets/sertif5.JPG" alt="Sertifikat 5" />
+            <div class="cert-badge">2025</div>
+          </div>
+          <div class="cert-info">
+            <p class="cert-issuer">Udemy</p>
+            <h3 class="cert-name">The Complete JavaScript Course 2025</h3>
+            <p class="cert-year">📅 Februari 2025</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-label fade-in">05 — Contact</div>
+      <h2 class="section-title fade-in">Hubungi <em>Saya</em></h2>
+
+      <p class="contact-subtitle fade-in">
+        Saya terbuka untuk kolaborasi, proyek freelance, atau sekadar ngobrol.<br>
+        Jangan ragu untuk menghubungi saya!
+      </p>
+
+      <!-- Contact cards -->
+      <div class="contact-grid fade-in">
+
+        <a href="mailto:email@example.com" class="contact-card">
+          <div class="contact-icon">📧</div>
+          <p class="contact-platform">Email</p>
+          <p class="contact-handle">email@example.com</p>
+        </a>
+
+        <a href="https://wa.me/6281234567890" target="_blank" class="contact-card">
+          <div class="contact-icon">💬</div>
+          <p class="contact-platform">WhatsApp</p>
+          <p class="contact-handle">+62 812-3456-7890</p>
+        </a>
+
+        <a href="https://github.com/username" target="_blank" class="contact-card">
+          <div class="contact-icon">🐙</div>
+          <p class="contact-platform">GitHub</p>
+          <p class="contact-handle">github.com/username</p>
+        </a>
+
+        <a href="https://instagram.com/username" target="_blank" class="contact-card">
+          <div class="contact-icon">📸</div>
+          <p class="contact-platform">Instagram</p>
+          <p class="contact-handle">@username</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="footer-logo">NA<span class="dot">.</span></p>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Nama Anda. Dibuat dengan ❤️ menggunakan HTML, CSS & JS.
+      </p>
+      <a href="#home" class="back-to-top" aria-label="Kembali ke atas">↑ Top</a>
+    </div>
+  </footer>
+
+
+  <!-- Script utama -->
+  <script src="script.js"></script>
+</body>
+</html>

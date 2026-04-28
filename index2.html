@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nama Anda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav" id="navbar">
+    <a href="#home" class="nav-name">NA.</a>
+    <button class="hamburger" id="hamburger" aria-label="menu">
+      <span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-menu">
+      <a href="#about"        class="nl">About</a>
+      <a href="#skills"       class="nl">Skills</a>
+      <a href="#portfolio"    class="nl">Work</a>
+      <a href="#certificates" class="nl">Certs</a>
+      <a href="#contact"      class="nl">Contact</a>
+      <button class="toggle-btn" id="themeToggle" aria-label="toggle dark">
+        <span class="t-light">☀</span><span class="t-dark">☽</span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-photo-wrap reveal">
+      <img
+        src="https://placehold.co/380x480/d4c5b0/1a1714?text=foto"
+        alt="Foto profil"
+        class="hero-photo"
+      />
+      <div class="photo-label mono">open to work ✦</div>
+    </div>
+
+    <div class="hero-text">
+      <p class="hero-sub reveal">halo, saya</p>
+      <h1 class="hero-heading reveal">
+        <span class="line-big">Nama</span>
+        <span class="line-big italic">Anda</span>
+      </h1>
+      <p class="hero-role mono reveal">&lt; web dev · programmer · student /&gt;</p>
+      <p class="hero-desc reveal">
+        Saya suka bikin hal-hal yang berguna dari nol —
+        mulai dari desain sampai deploy. Masih belajar, selalu penasaran.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#portfolio" class="cta-main">Lihat Kerjaanku →</a>
+        <a href="assets/cv.pdf" download class="cta-ghost">↓ CV</a>
+      </div>
+    </div>
+
+    <div class="bg-letter" aria-hidden="true">DEV</div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about section">
+    <div class="about-inner">
+      <div class="about-left reveal">
+        <p class="section-kicker">— about me</p>
+        <h2 class="section-h2">Siapa<br><em>saya?</em></h2>
+      </div>
+      <div class="about-right">
+        <p class="reveal">
+          Mahasiswa Informatika di Bandung yang kebanyakan waktunya dihabiskan
+          di depan layar — bukan main game, tapi debug. Jujur, kadang dua-duanya.
+        </p>
+        <p class="reveal">
+          Tertarik banget sama <strong>web development</strong> dan gimana
+          teknologi bisa menyelesaikan masalah nyata yang ada di sekitar kita,
+          bukan cuma masalah teknis yang dibuat-buat.
+        </p>
+        <p class="reveal">
+          Tujuan jangka panjang: jadi developer yang kodenya bisa dibaca
+          orang lain tanpa komentar penjelas — dan kalau bisa,
+          sambil kontribusi ke open-source.
+        </p>
+        <div class="about-tags reveal">
+          <span>📍 Bandung</span>
+          <span>🎓 Informatika</span>
+          <span>💼 Open to Work</span>
+          <span>🌐 ID · EN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="skills-head reveal">
+        <p class="section-kicker">— skills</p>
+        <h2 class="section-h2">Yang bisa<br><em>saya lakukan</em></h2>
+      </div>
+
+      <div class="skill-list reveal">
+        <div class="skill-row">
+          <span class="sk-name">HTML5</span>
+          <span class="sk-note">Bisa pake tanpa googling setiap 5 menit</span>
+          <span class="sk-dots">●●●●○</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">CSS3</span>
+          <span class="sk-note">Flexbox & Grid lancar, masih kadang tanya StackOverflow</span>
+          <span class="sk-dots">●●●●○</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">JavaScript</span>
+          <span class="sk-note">DOM, fetch, async/await — masih banyak yang belum tahu</span>
+          <span class="sk-dots">●●●○○</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">PHP</span>
+          <span class="sk-note">CRUD beres, framework masih eksplorasi</span>
+          <span class="sk-dots">●●●○○</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">MySQL</span>
+          <span class="sk-note">Query dan relasi paham, optimasi masih belajar</span>
+          <span class="sk-dots">●●●○○</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Git & GitHub</span>
+          <span class="sk-note">Push, pull, branch, merge — pernah conflict juga</span>
+          <span class="sk-dots">●●●●○</span>
+        </div>
+      </div>
+
+      <p class="skills-footer mono reveal">
+        + Figma · VS Code · Linux · REST API · Bootstrap · sedikit-sedikit Vue
+      </p>
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio section">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-kicker">— work</p>
+        <h2 class="section-h2">Proyek<br><em>yang pernah saya buat</em></h2>
+      </div>
+
+      <div class="work-list">
+
+        <article class="work-item reveal">
+          <div class="work-img-wrap">
+            <img src="https://placehold.co/720x440/2c2417/d4c5b0?text=Project+01" alt="Project 1" />
+          </div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-num mono">01</span>
+              <span class="work-tag">PHP · MySQL</span>
+            </div>
+            <h3 class="work-title">Sistem Manajemen Perpustakaan</h3>
+            <p class="work-desc">
+              Aplikasi web untuk mengelola data buku, anggota, dan
+              transaksi peminjaman. Dibuat untuk perpustakaan sekolah
+              yang masih pakai buku tulis.
+            </p>
+            <div class="work-links">
+              <a href="#" class="wl">Live →</a>
+              <a href="#" class="wl wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item work-item--flip reveal">
+          <div class="work-img-wrap">
+            <img src="https://placehold.co/720x440/1a2c1a/c5d4c0?text=Project+02" alt="Project 2" />
+          </div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-num mono">02</span>
+              <span class="work-tag">HTML · CSS · JS</span>
+            </div>
+            <h3 class="work-title">Portfolio Website Personal</h3>
+            <p class="work-desc">
+              Website ini sendiri. Dibuat dari nol tanpa framework,
+              karena saya ingin tahu seberapa jauh bisa pergi
+              hanya dengan vanilla HTML/CSS/JS.
+            </p>
+            <div class="work-links">
+              <a href="#" class="wl">Live →</a>
+              <a href="#" class="wl wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-img-wrap">
+            <img src="https://placehold.co/720x440/1a1a2c/c0c5d4?text=Project+03" alt="Project 3" />
+          </div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-num mono">03</span>
+              <span class="work-tag">PHP · MySQL · JS</span>
+            </div>
+            <h3 class="work-title">Toko Online Produk Lokal</h3>
+            <p class="work-desc">
+              Platform e-commerce sederhana untuk UMKM. Fitur utama:
+              katalog produk, keranjang belanja, dan checkout manual
+              via WhatsApp.
+            </p>
+            <div class="work-links">
+              <a href="#" class="wl">Live →</a>
+              <a href="#" class="wl wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item work-item--flip reveal">
+          <div class="work-img-wrap">
+            <img src="https://placehold.co/720x440/2c1a1a/d4c0c0?text=Project+04" alt="Project 4" />
+          </div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-num mono">04</span>
+              <span class="work-tag">JS · Chart.js</span>
+            </div>
+            <h3 class="work-title">Dashboard Monitoring Nilai</h3>
+            <p class="work-desc">
+              Dashboard untuk dosen memantau nilai mahasiswa,
+              lengkap dengan grafik distribusi dan filter per semester.
+              Proyek kolaborasi 3 orang.
+            </p>
+            <div class="work-links">
+              <a href="#" class="wl">Live →</a>
+              <a href="#" class="wl wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="certs section">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-kicker">— certs</p>
+        <h2 class="section-h2">Selembar<br><em>bukti belajar</em></h2>
+      </div>
+
+      <div class="cert-row">
+        <div class="cert-item reveal">
+          <img src="https://placehold.co/480x300/ede8df/1a1714?text=cert+1" alt="Sertifikat 1" />
+          <div class="cert-body">
+            <p class="cert-issuer mono">Dicoding Indonesia · 2024</p>
+            <p class="cert-title">Belajar Dasar Pemrograman Web</p>
+          </div>
+        </div>
+        <div class="cert-item reveal">
+          <img src="https://placehold.co/480x300/dfede0/1a1714?text=cert+2" alt="Sertifikat 2" />
+          <div class="cert-body">
+            <p class="cert-issuer mono">Google via Coursera · 2024</p>
+            <p class="cert-title">IT Support Professional</p>
+          </div>
+        </div>
+        <div class="cert-item reveal">
+          <img src="https://placehold.co/480x300/dfe0ed/1a1714?text=cert+3" alt="Sertifikat 3" />
+          <div class="cert-body">
+            <p class="cert-issuer mono">Udemy · 2025</p>
+            <p class="cert-title">The Complete JavaScript Course 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <p class="section-kicker">— contact</p>
+          <h2 class="section-h2">Ada proyek?<br><em>Yuk ngobrol.</em></h2>
+          <p class="contact-sub">
+            Saya terbuka untuk diskusi, kolaborasi, freelance,
+            atau sekadar tanya-tanya soal koding.
+          </p>
+        </div>
+        <div class="contact-right reveal">
+          <a href="mailto:email@example.com" class="contact-link">
+            <span class="cl-icon">✉</span>
+            <span class="cl-text">
+              <span class="cl-label mono">email</span>
+              <span class="cl-val">email@example.com</span>
+            </span>
+            <span class="cl-arrow">→</span>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" class="contact-link">
+            <span class="cl-icon">◎</span>
+            <span class="cl-text">
+              <span class="cl-label mono">whatsapp</span>
+              <span class="cl-val">+62 812-3456-7890</span>
+            </span>
+            <span class="cl-arrow">→</span>
+          </a>
+          <a href="https://github.com/username" target="_blank" class="contact-link">
+            <span class="cl-icon">⌥</span>
+            <span class="cl-text">
+              <span class="cl-label mono">github</span>
+              <span class="cl-val">github.com/username</span>
+            </span>
+            <span class="cl-arrow">→</span>
+          </a>
+          <a href="https://instagram.com/username" target="_blank" class="contact-link">
+            <span class="cl-icon">◈</span>
+            <span class="cl-text">
+              <span class="cl-label mono">instagram</span>
+              <span class="cl-val">@username</span>
+            </span>
+            <span class="cl-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-name">Nama Anda</span>
+      <span class="footer-copy mono">© <span id="year"></span> · dibuat sendiri, dengan susah payah</span>
+      <a href="#home" class="footer-top">↑ atas</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
