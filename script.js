@@ -1,250 +1,106 @@
 /* ============================================================
-   SCRIPT.JS — Portfolio Website
-   Fitur: Navbar scroll, Dark mode, Smooth scroll,
-          Fade-in animasi, Skill bars, Mobile menu
+   SCRIPT.JS — Farkhan Bisyir Portfolio
    ============================================================ */
 
+/* ── CURSOR ──────────────────────────────────────────────── */
+const cursor    = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
+let mx = -100, my = -100, cx = -100, cy = -100;
 
-/* ============================================================
-   1. NAVBAR — berubah warna saat scroll
-   ============================================================ */
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 
-// Fungsi untuk update navbar saat scroll
-function handleNavbarScroll() {
-  if (window.scrollY > 60) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+function animateCursor() {
+  cx += (mx - cx) * 0.12;
+  cy += (my - cy) * 0.12;
+  if (cursor)    cursor.style.cssText    = `left:${cx}px;top:${cy}px`;
+  if (cursorDot) cursorDot.style.cssText = `left:${mx}px;top:${my}px`;
+  requestAnimationFrame(animateCursor);
 }
+animateCursor();
 
-// Update link aktif sesuai section yang terlihat
-function updateActiveNavLink() {
-  const sections = document.querySelectorAll('section[id]');
-  let currentSection = '';
-
-  sections.forEach(section => {
-    const sectionTop    = section.offsetTop - 120;
-    const sectionBottom = sectionTop + section.offsetHeight;
-
-    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-      currentSection = section.getAttribute('id');
-    }
+/* Cursor membesar saat hover link/button */
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    if (cursor) { cursor.style.width='54px'; cursor.style.height='54px'; }
   });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${currentSection}`) {
-      link.classList.add('active');
-    }
+  el.addEventListener('mouseleave', () => {
+    if (cursor) { cursor.style.width='36px'; cursor.style.height='36px'; }
   });
-}
+});
 
-// Jalankan saat scroll
+
+/* ── NAV — sticky + link aktif ───────────────────────────── */
+const nav   = document.getElementById('nav');
+const links = document.querySelectorAll('.nl');
+
 window.addEventListener('scroll', () => {
-  handleNavbarScroll();
-  updateActiveNavLink();
+  nav.classList.toggle('stuck', window.scrollY > 60);
+
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 140) current = s.id;
+  });
+  links.forEach(l => {
+    l.classList.toggle('on', l.getAttribute('href') === `#${current}`);
+  });
 });
 
-// Jalankan sekali saat halaman dimuat
-handleNavbarScroll();
-updateActiveNavLink();
 
+/* ── HAMBURGER ───────────────────────────────────────────── */
+const burger  = document.getElementById('burger');
+const navMenu = document.getElementById('navMenu');
 
-/* ============================================================
-   2. MOBILE MENU — hamburger toggle
-   ============================================================ */
-const hamburger = document.getElementById('hamburger');
-const navMenu   = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
+burger?.addEventListener('click', () => {
+  burger.classList.toggle('on');
   navMenu.classList.toggle('open');
+  document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
 });
 
-// Tutup menu saat link diklik
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('open');
-  });
-});
-
-// Tutup menu saat klik di luar area menu
-document.addEventListener('click', (e) => {
-  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('open');
-  }
-});
+links.forEach(l => l.addEventListener('click', () => {
+  burger?.classList.remove('on');
+  navMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}));
 
 
-/* ============================================================
-   3. DARK MODE TOGGLE
-   ============================================================ */
-const themeToggle = document.getElementById('themeToggle');
+/* ── DARK MODE ───────────────────────────────────────────── */
+const modeBtn = document.getElementById('modeBtn');
+const root    = document.documentElement;
 
-// Ambil preferensi yang disimpan di localStorage
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
+root.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 
-// Toggle tema saat tombol diklik
-themeToggle.addEventListener('click', () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme     = currentTheme === 'light' ? 'dark' : 'light';
-
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme); // simpan preferensi
+modeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
 });
 
 
-/* ============================================================
-   4. SMOOTH SCROLL — klik navbar link
-   ============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+/* ── SMOOTH SCROLL ───────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
     e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const target   = document.querySelector(targetId);
-
-    if (target) {
-      const navHeight = navbar.offsetHeight;
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight;
-
-      window.scrollTo({
-        top:      targetTop,
-        behavior: 'smooth'
-      });
-    }
+    const offset = nav.offsetHeight + 8;
+    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
   });
 });
 
 
-/* ============================================================
-   5. FADE-IN ANIMASI — elemen muncul saat scroll
-      Menggunakan IntersectionObserver (lebih efisien dari scroll event)
-   ============================================================ */
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const fadeObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        fadeObserver.unobserve(entry.target); // stop observing setelah muncul
-      }
-    });
-  },
-  {
-    threshold:  0.12,  // trigger saat 12% elemen terlihat
-    rootMargin: '0px 0px -50px 0px'
-  }
-);
-
-fadeElements.forEach(el => fadeObserver.observe(el));
-
-
-/* ============================================================
-   6. SKILL BARS — animasi progress bar
-      Dijalankan saat section skills masuk viewport
-   ============================================================ */
-const skillFills   = document.querySelectorAll('.skill-fill');
-const skillSection = document.getElementById('skills');
-let   skillsAnimated = false; // flag agar animasi hanya sekali
-
-const skillObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !skillsAnimated) {
-        skillsAnimated = true;
-
-        // Animasi setiap bar dengan delay bertingkat
-        skillFills.forEach((fill, index) => {
-          const targetWidth = fill.getAttribute('data-width');
-
-          setTimeout(() => {
-            fill.style.width = targetWidth + '%';
-          }, index * 120); // delay 120ms per bar
-        });
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
-
-if (skillSection) {
-  skillObserver.observe(skillSection);
-}
-
-
-/* ============================================================
-   7. FOOTER — update tahun otomatis
-   ============================================================ */
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
-
-/* ============================================================
-   8. TYPING EFFECT — teks tagline di hero (opsional)
-      Uncomment jika ingin mengaktifkan efek mengetik
-   ============================================================ */
-/*
-const taglineEl = document.querySelector('.hero-tagline');
-const taglines  = [
-  'Web Developer',
-  'Programmer',
-  'UI/UX Enthusiast',
-  'Student'
-];
-
-let taglineIndex = 0;
-let charIndex    = 0;
-let isDeleting   = false;
-
-function typeEffect() {
-  const current = taglines[taglineIndex];
-
-  if (isDeleting) {
-    taglineEl.textContent = current.substring(0, charIndex - 1);
-    charIndex--;
-  } else {
-    taglineEl.textContent = current.substring(0, charIndex + 1);
-    charIndex++;
-  }
-
-  if (!isDeleting && charIndex === current.length) {
-    isDeleting = true;
-    setTimeout(typeEffect, 1800);
-    return;
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    taglineIndex = (taglineIndex + 1) % taglines.length;
-  }
-
-  const speed = isDeleting ? 60 : 90;
-  setTimeout(typeEffect, speed);
-}
-
-typeEffect();
-*/
-
-
-/* ============================================================
-   9. LOADING — sembunyikan jika ada loading screen
-   ============================================================ */
-window.addEventListener('load', () => {
-  // Trigger fade-in untuk elemen yang sudah di viewport
-  fadeElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('visible');
-    }
+/* ── REVEAL ANIMATION ────────────────────────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (!entry.isIntersecting) return;
+    /* delay ringan per elemen dalam group */
+    setTimeout(() => entry.target.classList.add('on'), i * 60);
+    io.unobserve(entry.target);
   });
-});
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+
+/* ── FOOTER YEAR ─────────────────────────────────────────── */
+const yr = document.getElementById('yr');
+if (yr) yr.textContent = new Date().getFullYear();
